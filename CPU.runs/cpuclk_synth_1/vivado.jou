@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed May 19 21:17:58 2021
+# Process ID: 17744
+# Current directory: D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/cpuclk_synth_1
+# Command line: vivado.exe -log cpuclk.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpuclk.tcl
+# Log file: D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/cpuclk_synth_1/cpuclk.vds
+# Journal file: D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/cpuclk_synth_1\vivado.jou
+#-----------------------------------------------------------
+source cpuclk.tcl -notrace
