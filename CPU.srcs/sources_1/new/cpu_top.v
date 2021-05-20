@@ -26,55 +26,76 @@ module cpu_top(
     input upg_wen_i, // UPG write enable
     input[13:0] upg_adr_i, // UPG write address
     input[31:0] upg_dat_i, // UPG write data
-    input upg_done_i // 1 if program finished
+    input upg_done_i, // 1 if program finished
+    input [23:0] switch_in,
+    output [23:0] led_out
 );
-    // unknown source
-    ////////////////////////////////////////////////////////////////////
-    wire led_ctrl; // from mem_or_io (output)
-    wire switch_ctrl; // from mem_to_io (output)
-    wire [15:0] io_rdata; // from mem_or_io (input)
-    ////////////////////////////////////////////////////////////////////
     
-    ////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     //// current issues: 
     ////    control32: line 71-72
     ////    cpu_top: something that i'm not sure about (look for comments)
-    ////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     
-    wire cpu_clk;
-    wire upg_clk;
-    wire [31:0] instruction;
-    wire [31:0] branch_base_addr;
-    wire [31:0] link_addr;
-    wire [31:0] addr_result;
-    wire zero;
-    wire branch;
-    wire n_branch;
-    wire jmp;
-    wire jal;
-    wire [31:0] alu_result;
-// from decoder
-    wire [31:0] read_data_1;
-    wire [31:0] read_data_2;
-    wire [31:0] imme_extend;
-// from controller
-    wire [1:0] alu_op;
+    
     wire alu_src;
+    wire alu_src;
+    wire branch;
+    wire cpu_clk;
     wire i_format;
-    wire sftmd;
-    wire jr;
-    
-    wire reg_dst;
-	wire mem_or_io_to_reg;
-    wire reg_write;
-    wire mem_write;
-    wire mem_read;
     wire io_read;
     wire io_write;
-    wire ram_dat_o;
+    wire jal;
+    wire jmp;
+    wire jr;
+    wire led_ctrl;
+    wire mem_or_io_to_reg;
+    wire mem_read;
+    wire mem_write;
+    wire n_branch;
     wire r_wdata;
-    wire [31:0] write_data_mio;
+    wire ram_dat_o;
+    wire reg_dst;
+    wire reg_write;
+    wire sftmd;
+    wire switch_ctrl;
+    wire upg_clk;
+    wire zero;
+
+    wire [1:0] alu_op;
+    
+    wire [15:0] io_rdata;
+    
     wire [31:0] addr_out_mio;
+    wire [31:0] addr_result;
+    wire [31:0] alu_result;
+    wire [31:0] branch_base_addr;
+    wire [31:0] imme_extend;
+    wire [31:0] instruction;
+    wire [31:0] link_addr;
+    wire [31:0] read_data_1;
+    wire [31:0] read_data_2;
+    wire [31:0] write_data_mio;
+    
+    leds u_leds(
+        .led_clk(cpu_clk),
+        .led_rst(reset),
+        .led_write(io_write),
+        .led_cs(let_ctrl),
+        .led_addr(addr_out_mio[1:0]),
+        .led_wdata(write_data_mio[15:0]),
+        .led_out(led_out)
+    );
+    
+    switchs u_switches(
+        .switch_clk(cpu_clk),
+        .switch_rst(reset),
+        .switch_cs(switch_ctrl),
+        .switch_addr(addr_out_mio[1:0]),
+        .switch_read(io_read),
+        .switch_i(switch_in),
+        .switch_rdata(io_rdata)
+    );
     
     cpuclk u_clk(
         .clk_in1(clock),

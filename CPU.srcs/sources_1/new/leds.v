@@ -27,10 +27,11 @@ module leds(
     input led_cs,		      	// 从memorio来的LED片选信号   !!!!!!!!!!!!!!!!!
     input [1:0] led_addr,	        //  到LED模块的地址低端  !!!!!!!!!!!!!!!!!!!!
     input [15:0] led_wdata,	  	//  写到LED模块的数据，注意数据线只有16根
+    
     output reg [23:0] led_out		//  向板子上输出的24位LED信号
  ); 
 	// write by teacher
-    // reg [23:0] ledout;
+    // reg [23:0] led_out;
     
     always@(posedge led_clk or posedge led_rst) begin
         if(led_rst) begin
@@ -39,7 +40,7 @@ module leds(
 		else if(led_cs && led_write) begin
 			if(led_addr == 2'b00)
 				led_out[23:0] <= {led_out[23:16], led_wdata[15:0]};
-			else if(led_addr == 2'b10 )
+			else if(led_addr == 2'b10)
 				led_out[23:0] <= {led_wdata[7:0], led_out[15:0]};
 			else
 				led_out <= led_out;

@@ -23,10 +23,11 @@ module switchs(
     input switch_clk,			        //  时钟信号
     input switch_rst,			        //  复位信号
     input switch_cs,			        //从memorio来的switch片选信号  !!!!!!!!!!!!!!!!!
-    input[1:0] switch_addr, 	    //  到switch模块的地址低端  !!!!!!!!!!!!!!!
+    input [1:0] switch_addr, 	    //  到switch模块的地址低端  !!!!!!!!!!!!!!!
     input switch_read,			    //  读信号
-    output reg [15:0] switch_rdata,	    //  送到CPU的拨码开关值注意数据总线只有16根
-    input [23:0] switch_i		    //  从板上读的24位开关数据
+    input [23:0] switch_i,		    //  从板上读的24位开关数据
+    
+    output reg [15:0] switch_rdata	    //  送到CPU的拨码开关值注意数据总线只有16根
 );
     // write by teacher
     // reg [23:0] switch_rdata;
