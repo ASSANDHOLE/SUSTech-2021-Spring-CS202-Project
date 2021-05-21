@@ -21,12 +21,10 @@
 
 module cpu_top(
     input clock,
-    input reset,
-    input upg_rst_i, // UPG reset (Active High)
-    input upg_wen_i, // UPG write enable
-    input[13:0] upg_adr_i, // UPG write address
-    input[31:0] upg_dat_i, // UPG write data
-    input upg_done_i, // 1 if program finished
+    input fpga_reset,
+    input start_pg,
+    input rx,
+    output tx,
     input [23:0] switch_in,
     output [23:0] led_out
 );
@@ -37,8 +35,16 @@ module cpu_top(
     ////    cpu_top: something that i'm not sure about (look for comments)
     ////////////////////////////////////////////////////////////////////////
     
+    wire reset;
     
-    wire alu_src;
+    wire upg_rst_i; // UPG reset (Active High)
+    wire upg_wen_i; // UPG write enable
+    wire [13:0] upg_adr_i; // UPG write address
+    wire [31:0] upg_dat_i; // UPG write data
+    wire upg_done_i; // 1 if program finished
+    
+    wire upg_clk_o;
+    
     wire alu_src;
     wire branch;
     wire cpu_clk;
@@ -76,6 +82,7 @@ module cpu_top(
     wire [31:0] read_data_1;
     wire [31:0] read_data_2;
     wire [31:0] write_data_mio;
+    reg upg_rst;
     
     leds u_leds(
         .led_clk(cpu_clk),
@@ -117,7 +124,7 @@ module cpu_top(
         .jmp(jmp),
         .jal(jal),
         .jr(jr),
-        .upg_rst_i(upg_rst_i),
+        .upg_rst_i(upg_rst),
         .upg_clk_i(upg_clk),
         .upg_wen_i(upg_wen_i),
         .upg_adr_i(upg_adr_i),
@@ -203,11 +210,33 @@ module cpu_top(
         .ram_adr_i(addr_out_mio[13:0]),
         .ram_dat_i(write_data_mio),
         .ram_dat_o(ram_dat_o),
-        .upg_rst_i(upg_rst_i),
+        .upg_rst_i(upg_rst),
         .upg_clk_i(upg_clk),
         .upg_wen_i(upg_wen_i),
         .upg_adr_i(upg_adr_i),
         .upg_dat_i(upg_dat_i),
         .upg_done_i(upg_done_i)
+    );
+    
+    wire spg_bufg;
+    
+    BUFG asd(
+        .I(start_pg),
+        .O(spg_bufg)
+    );
+    
+    always @(posedge clock) begin
+        if (spg_bufg) begin
+            upg_rst = 0;
+        end
+        else begin
+            upg_rst = 1;
+        end
+    end
+    
+    assign reset = fpga_reset | !upg_rst;
+    
+    uart_bmpg_0 u_upg(
+        
     );
 endmodule

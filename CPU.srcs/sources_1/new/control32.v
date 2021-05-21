@@ -68,6 +68,6 @@ module control32(
     assign reg_write = (r_format || lw || jal || i_format) && !(jr);
     assign mem_write = (sw && (alu_result_high[21:0] != 22'b11_1111_1111_1111_1111_1111));
     assign mem_read = lw;
-    assign io_read = 0; // TODO add details
-    assign io_write = 0; // TODO add details
+    assign io_read = 0; // TODO add details  # cin $1
+    assign io_write = 0; // TODO add details  # cout
 endmodule

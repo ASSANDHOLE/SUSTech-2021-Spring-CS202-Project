@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri May 21 20:38:51 2021
+# Process ID: 21244
+# Current directory: D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/uart_bmpg_0_synth_1
+# Command line: vivado.exe -log uart_bmpg_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_bmpg_0.tcl
+# Log file: D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/uart_bmpg_0_synth_1/uart_bmpg_0.vds
+# Journal file: D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/uart_bmpg_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source uart_bmpg_0.tcl -notrace
