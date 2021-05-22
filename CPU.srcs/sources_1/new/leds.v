@@ -30,23 +30,29 @@ module leds(
     
     output reg [23:0] led_out		//  向板子上输出的24位LED信号
  ); 
-	// write by teacher
-    // reg [23:0] led_out;
     
-    always@(posedge led_clk or posedge led_rst) begin
-        if(led_rst) begin
+//	 write by teacher
+//     reg [23:0] led_out;
+    
+    always @(posedge led_clk or posedge led_rst) begin
+        if (led_rst) begin
             led_out <= 24'h000000;
         end
-		else if(led_cs && led_write) begin
-			if(led_addr == 2'b00)
-				led_out[23:0] <= {led_out[23:16], led_wdata[15:0]};
-			else if(led_addr == 2'b10)
-				led_out[23:0] <= {led_wdata[7:0], led_out[15:0]};
-			else
+		else if (led_cs && led_write) begin
+			if (led_addr == 2'b00) begin
+				led_out[23:0] <= {led_out[23], led_out[22:16], led_wdata[15:0]};
+		    end
+			else if (led_addr == 2'b10) begin
+				led_out[23:0] <= {led_out[23], led_wdata[7:0], led_out[15:0]};
+			end
+			else begin
 				led_out <= led_out;
+			end
         end
 		else begin
             led_out <= led_out;
         end
     end
+    
+    
 endmodule

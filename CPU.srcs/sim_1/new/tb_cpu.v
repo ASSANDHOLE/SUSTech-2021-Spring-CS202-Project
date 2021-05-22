@@ -26,14 +26,15 @@ module tb_cpu;
     reg start_pg;
     reg rx;
     wire tx;
+    
     reg [23:0] switch_in;
     wire [23:0] led_out;
-    wire [3:0] m_rw_io_rw;
-    wire [31:0] instruction;
-    wire [31:0] alu_res;
-    wire [31:0] rd1, imt;
+   
+    wire lc, lr, lw, lcs;
+    wire [1:0] la;
+    wire [15:0] lw15;
     
-    cpu_top u_cpu(
+    cpu_top ct(
         .clock(clock),
         .fpga_reset(fpga_reset),
         .start_pg(start_pg),
@@ -41,11 +42,13 @@ module tb_cpu;
         .tx(tx),
         .switch_in(switch_in),
         .led_out(led_out),
-        .m_rw_io_rw(m_rw_io_rw),
-        .instruction_o(instruction),
-        .alu_res(alu_res),
-        .rd1(rd1),
-        .imt(imt)
+        
+        .lc(lc),
+        .lr(lr),
+        .lw(lw),
+        .lcs(lcs),
+        .la(la),
+        .lw15(lw15)
     );
     
     initial begin
@@ -53,7 +56,7 @@ module tb_cpu;
         fpga_reset = 0;
         start_pg = 0;
         rx = 0;
-        switch_in = 23'b0;
+        switch_in = 0;
         # 2000 fpga_reset = 1;
         # 20 fpga_reset = 0;
         # 100 switch_in = 23'b1;

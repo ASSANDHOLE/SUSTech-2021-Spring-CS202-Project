@@ -126,7 +126,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 5
-  set_param synth.incrementalSynthesisCache C:/Users/AnGuangyan/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22112-AN-GUANGYAN/incrSyn
+  set_param xicom.use_bs_reader 1
   open_checkpoint cpu_top_routed.dcp
   set_property webtalk.parent_dir D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.cache/wt [current_project]
 set_property TOP cpu_top [current_fileset]

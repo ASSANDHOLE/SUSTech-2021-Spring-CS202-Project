@@ -55,7 +55,7 @@ module idecode32(
     
     assign read_data_1 = registers[read_register_1];
     assign read_data_2 = registers[read_register_2];
-    
+
     always @* begin
         if(reg_write) begin
             if(jal) begin
@@ -86,7 +86,7 @@ module idecode32(
                 registers[i] <= 0;
             end
         end 
-        if(reg_write) begin
+        else if(reg_write != 0) begin
             registers[write_register] <= write_data;    
         end
     end

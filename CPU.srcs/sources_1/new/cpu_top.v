@@ -26,12 +26,7 @@ module cpu_top(
     input rx,
     output tx,
     input [23:0] switch_in,
-    output [23:0] led_out,
-    
-    output [3:0] m_rw_io_rw, // debug
-    output [31:0] instruction_o,
-    output [31:0] alu_res,
-    output [31:0] rd1, imt
+    output [23:0] led_out
 );
     
     wire reset;
@@ -60,7 +55,6 @@ module cpu_top(
     wire mem_read;
     wire mem_write;
     wire n_branch;
-    wire r_wdata;
     wire ram_dat_o;
     wire reg_dst;
     wire reg_write;
@@ -83,19 +77,14 @@ module cpu_top(
     wire [31:0] pco;
     wire [31:0] read_data_1;
     wire [31:0] read_data_2;
+    wire [31:0] r_wdata;
     wire [31:0] write_data_mio;
-    
-    assign m_rw_io_rw = {mem_read, mem_write, io_read, io_write}; // debug
-    assign instruction_o = instruction;
-    assign alu_res = alu_result;
-    assign rd1 = read_data_1;
-    assign imt = imme_extend;
     
     leds u_leds(
         .led_clk(cpu_clk),
         .led_rst(reset),
         .led_write(io_write),
-        .led_cs(let_ctrl),
+        .led_cs(led_ctrl),
         .led_addr(addr_out_mio[1:0]),
         .led_wdata(write_data_mio[15:0]),
         .led_out(led_out)
@@ -217,8 +206,6 @@ module cpu_top(
         .reset(reset),
         .opcplus4(link_addr)
     );
-    
-    
     
     dmemory32 u_mem(
         .ram_clk_i(cpu_clk),

@@ -52,6 +52,10 @@ module control32(
     assign r_format = opcode == 6'b000000;
     assign lw = opcode == 6'b100011;
     assign sw = opcode == 6'b101011;
+    assign mem_write = sw && (alu_result_high[21:0] != 22'b11_1111_1111_1111_1111_1111);
+    assign mem_read = lw && (alu_result_high[21:0] != 22'b11_1111_1111_1111_1111_1111);
+    assign io_read = lw && (alu_result_high[21:0] == 22'b11_1111_1111_1111_1111_1111);
+    assign io_write = sw && (alu_result_high[21:0] == 22'b11_1111_1111_1111_1111_1111);
     assign reg_dst = r_format;
     assign reg_write = (r_format || jal || lw || i_format) && !jr;
     assign i_format = opcode[5:3] == 3'b001;
@@ -63,10 +67,5 @@ module control32(
     assign branch = opcode == 6'b000100;
     assign n_branch = opcode == 6'b000101;
     assign mem_or_io_to_reg = io_read || mem_read;
-    assign alu_src = i_format || lw || mem_write;
-    assign reg_write = (r_format || lw || jal || i_format) && !(jr);
-    assign mem_write = sw && (alu_result_high[21:0] != 22'b11_1111_1111_1111_1111_1111);
-    assign mem_read = lw && (alu_result_high[21:0] != 22'b11_1111_1111_1111_1111_1111);
-    assign io_read = lw && (alu_result_high[21:0] == 22'b11_1111_1111_1111_1111_1111);
-    assign io_write = sw && (alu_result_high[21:0] == 22'b11_1111_1111_1111_1111_1111);
+    assign alu_src = i_format || (lw || sw) || mem_write;
 endmodule

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sat May 22 21:10:03 2021
+| Date         : Sun May 23 03:29:28 2021
 | Host         : AN-GUANGYAN running 64-bit major release  (build 9200)
 | Command      : report_methodology -file cpu_top_methodology_drc_routed.rpt -pb cpu_top_methodology_drc_routed.pb -rpx cpu_top_methodology_drc_routed.rpx
 | Design       : cpu_top
@@ -23,698 +23,1367 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 139
+             Violations found: 389
 +-----------+------------------+------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                      | Violations |
 +-----------+------------------+------------------------------------------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 137        |
+| TIMING-14 | Critical Warning | LUT on the clock tree                                            | 2          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 268        |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin                        | 1          |
 | CKLD-2    | Warning          | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                                     | 61         |
+| TIMING-16 | Warning          | Large setup violation                                            | 21         |
+| TIMING-20 | Warning          | Non-clocked latch                                                | 35         |
 +-----------+------------------+------------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+TIMING-14#1 Critical Warning
+LUT on the clock tree  
+The LUT u_mem/u_ram_32x16384_i_1 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
+Related violations: <none>
+
+TIMING-14#2 Critical Warning
+LUT on the clock tree  
+The LUT u_rom/instmem_i_1 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
+Related violations: <none>
+
 TIMING-17#1 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[0]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[0]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[10]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[0]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#3 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[11]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[10]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[13]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[10]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#5 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[14]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[11]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#6 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[16]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[11]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[17]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[12]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#8 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[18]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[12]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#9 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[19]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[13]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#10 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[1]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[13]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#11 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[21]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[14]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#12 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[22]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[14]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#13 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[24]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[15]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#14 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[25]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[15]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#15 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[26]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[16]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#16 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[27]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[16]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#17 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[29]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[17]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#18 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[2]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[17]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#19 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[30]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[18]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#20 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[32]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[18]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#21 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[33]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[19]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[34]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[19]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#23 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[35]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[1]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[37]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[1]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#25 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[38]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[20]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#26 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[3]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[20]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#27 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[40]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[21]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#28 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[41]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[21]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#29 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[42]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[22]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#30 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[43]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[22]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#31 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[45]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[23]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#32 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[46]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[23]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#33 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[48]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[24]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#34 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[49]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[24]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#35 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[50]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[25]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#36 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[51]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[25]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#37 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[53]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[26]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#38 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[54]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[26]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#39 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[56]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[27]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#40 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[57]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[27]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#41 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[58]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[28]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#42 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[59]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[28]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#43 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[5]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[29]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#44 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[61]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[29]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#45 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[62]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[2]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#46 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[6]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[2]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#47 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[8]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[3]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#48 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/bn_ascii_reg[9]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[3]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#49 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[4]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#50 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[10]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[4]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#51 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[11]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[5]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#52 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[12]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[5]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#53 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[13]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[6]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#54 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[14]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[6]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#55 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[15]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[7]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#56 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[16]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[7]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#57 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[17]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[8]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#58 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[18]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[8]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#59 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[19]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[9]_C/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#60 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_ifetch/link_addr_reg[9]_P/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#61 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[20]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#62 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[21]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#63 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[22]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#64 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[23]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#65 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[24]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#66 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[25]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#67 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[26]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#68 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[27]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#69 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[28]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#70 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[29]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#71 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#72 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[30]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#73 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[31]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#74 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#75 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[4]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#76 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[5]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#77 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[6]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#78 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[7]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#79 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[8]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#80 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_cnt_reg[9]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[32]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#81 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_len_reg[0]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[33]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#82 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_len_reg[1]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[34]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#83 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_len_reg[2]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[35]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#84 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_len_reg[3]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[37]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#85 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_len_reg[4]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[38]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#86 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_len_reg[5]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#87 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_len_reg[6]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[40]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#88 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_len_reg[7]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[41]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#89 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[0]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[42]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#90 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[10]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[43]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#91 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[11]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[45]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#92 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[12]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[46]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#93 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[13]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[48]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#94 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[14]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[49]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#95 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[15]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[50]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#96 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[16]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[51]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#97 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[17]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[53]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#98 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[18]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[54]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#99 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[19]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[56]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#100 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[1]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[57]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#101 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[20]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[58]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#102 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[21]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[59]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#103 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[22]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#104 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[23]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[61]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#105 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[24]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[62]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#106 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[25]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#107 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[26]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#108 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[27]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/bn_ascii_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#109 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[28]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#110 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[29]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#111 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[2]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#112 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[30]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#113 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[31]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#114 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[3]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#115 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[4]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#116 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[5]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#117 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[6]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#118 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[7]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#119 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[8]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#120 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/byte_num_reg[9]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#121 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/disp_reg[0]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#122 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/disp_reg[1]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#123 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/disp_reg[2]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#124 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/disp_reg[3]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#125 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/disp_reg[4]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#126 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/disp_reg[5]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#127 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/disp_reg[6]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#128 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/disp_reg[7]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#129 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/len_cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#130 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/len_cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#131 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/len_cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#132 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/len_cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#133 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/recv_done_reg/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[31]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#134 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/rx_done_reg/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#135 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/wr_byte_len_done_reg/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#136 Critical Warning
 Non-clocked sequential cell  
-The clock pin u_upg/inst/upg_inst/wr_byte_num_done_reg/C is not reached by a timing clock
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#137 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#138 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#139 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#140 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_cnt_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#141 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_len_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#142 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_len_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#143 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_len_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#144 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_len_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#145 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_len_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#146 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_len_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#147 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_len_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#148 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_len_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#149 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#150 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#151 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#152 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#153 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#154 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#155 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#156 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[16]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#157 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[17]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#158 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[18]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#159 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[19]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#160 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#161 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#162 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#163 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#164 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#165 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[24]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#166 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[25]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#167 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[26]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#168 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[27]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#169 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[28]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#170 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[29]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#171 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#172 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[30]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#173 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[31]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#174 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#175 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#176 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#177 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#178 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#179 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#180 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/byte_num_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#181 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#182 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#183 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#184 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#185 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#186 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#187 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#188 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[16]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#189 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[17]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#190 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[18]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#191 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[19]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#192 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#193 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#194 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#195 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#196 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#197 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#198 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#199 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#200 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#201 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#202 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#203 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#204 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/dbuf_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#205 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/disp_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#206 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/disp_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#207 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/disp_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#208 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/disp_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#209 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/disp_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#210 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/disp_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#211 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/disp_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#212 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/disp_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#213 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/len_cnt_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#214 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/len_cnt_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#215 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/len_cnt_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#216 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/len_cnt_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#217 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/recv_done_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#218 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/rx_done_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#219 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#220 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#221 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#222 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#223 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#224 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#225 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#226 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#227 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#228 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#229 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#230 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#231 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#232 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_adr_o_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#233 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#234 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#235 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#236 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#237 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#238 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#239 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#240 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[16]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#241 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[17]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#242 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[18]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#243 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[19]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#244 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#245 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#246 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#247 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#248 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#249 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[24]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#250 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[25]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#251 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[26]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#252 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[27]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#253 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[28]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#254 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[29]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#255 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#256 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[30]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#257 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[31]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#258 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#259 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#260 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#261 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#262 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#263 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#264 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_dat_o_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#265 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/upg_wen_o_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#266 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/wr_byte_len_done_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#267 Critical Warning
+Non-clocked sequential cell  
+The clock pin u_upg/inst/upg_inst/wr_byte_num_done_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#268 Critical Warning
 Non-clocked sequential cell  
 The clock pin upg_rst_reg/C is not reached by a timing clock
 Related violations: <none>
@@ -727,6 +1396,598 @@ Related violations: <none>
 CKLD-2#1 Warning
 Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
 Clock net clock_IBUF is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): clock_IBUF_inst/O, u_clk/clk_in1, upg_rst_reg/C
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell u_decode/registers[0][31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_leds/led_out_reg[0]/CLR, u_leds/led_out_reg[10]/CLR,
+u_leds/led_out_reg[11]/CLR, u_leds/led_out_reg[12]/CLR,
+u_leds/led_out_reg[13]/CLR, u_leds/led_out_reg[14]/CLR,
+u_leds/led_out_reg[15]/CLR, u_leds/led_out_reg[16]/CLR,
+u_leds/led_out_reg[17]/CLR, u_leds/led_out_reg[18]/CLR,
+u_leds/led_out_reg[19]/CLR, u_leds/led_out_reg[1]/CLR,
+u_leds/led_out_reg[20]/CLR, u_leds/led_out_reg[21]/CLR,
+u_leds/led_out_reg[22]/CLR (the first 15 of 40 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[0]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[0]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[0]_C/CLR, u_ifetch/link_addr_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#4 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[10]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[10]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#5 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[10]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[10]_C/CLR, u_ifetch/link_addr_reg[10]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#6 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[11]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[11]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#7 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[11]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[11]_C/CLR, u_ifetch/link_addr_reg[11]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#8 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[12]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[12]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#9 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[12]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[12]_C/CLR, u_ifetch/link_addr_reg[12]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#10 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[13]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[13]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#11 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[13]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[13]_C/CLR, u_ifetch/link_addr_reg[13]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#12 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[14]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[14]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#13 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[14]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[14]_C/CLR, u_ifetch/link_addr_reg[14]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#14 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[15]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[15]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#15 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[15]_C/CLR, u_ifetch/link_addr_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#16 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[16]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[16]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#17 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[16]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[16]_C/CLR, u_ifetch/link_addr_reg[16]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#18 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[17]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[17]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#19 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[17]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[17]_C/CLR, u_ifetch/link_addr_reg[17]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#20 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[18]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[18]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#21 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[18]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[18]_C/CLR, u_ifetch/link_addr_reg[18]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#22 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[19]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[19]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#23 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[19]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[19]_C/CLR, u_ifetch/link_addr_reg[19]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#24 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[1]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[1]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#25 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[1]_C/CLR, u_ifetch/link_addr_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#26 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[20]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[20]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#27 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[20]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[20]_C/CLR, u_ifetch/link_addr_reg[20]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#28 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[21]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[21]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#29 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[21]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[21]_C/CLR, u_ifetch/link_addr_reg[21]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#30 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[22]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[22]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#31 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[22]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[22]_C/CLR, u_ifetch/link_addr_reg[22]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#32 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[23]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[23]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#33 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[23]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[23]_C/CLR, u_ifetch/link_addr_reg[23]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#34 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[24]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[24]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#35 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[24]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[24]_C/CLR, u_ifetch/link_addr_reg[24]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#36 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[25]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[25]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#37 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[25]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[25]_C/CLR, u_ifetch/link_addr_reg[25]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#38 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[26]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[26]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#39 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[26]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[26]_C/CLR, u_ifetch/link_addr_reg[26]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#40 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[27]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[27]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#41 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[27]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[27]_C/CLR, u_ifetch/link_addr_reg[27]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#42 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[28]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[28]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#43 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[28]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[28]_C/CLR, u_ifetch/link_addr_reg[28]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#44 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[29]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[29]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#45 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[29]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[29]_C/CLR, u_ifetch/link_addr_reg[29]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#46 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[2]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[2]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#47 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[2]_C/CLR, u_ifetch/link_addr_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#48 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[3]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[3]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#49 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[3]_C/CLR, u_ifetch/link_addr_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#50 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[4]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[4]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#51 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[4]_C/CLR, u_ifetch/link_addr_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#52 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[5]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[5]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#53 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[5]_C/CLR, u_ifetch/link_addr_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#54 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[6]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[6]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#55 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[6]_C/CLR, u_ifetch/link_addr_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#56 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[7]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[7]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#57 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[7]_C/CLR, u_ifetch/link_addr_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#58 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[8]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[8]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#59 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[8]_C/CLR, u_ifetch/link_addr_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#60 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[9]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[9]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#61 Warning
+LUT drives async reset alert  
+LUT cell u_rom/link_addr_reg[9]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[9]_C/CLR, u_ifetch/link_addr_reg[9]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.002 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_rom/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DIADI[1] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.006 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_rom/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DIADI[5] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.017 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_rom/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DIADI[0] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.026 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_rom/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DIPADIP[0] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.038 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_rom/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DIADI[3] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.070 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[8] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -1.117 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[2] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -1.181 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[7] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -1.216 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_rom/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DIPADIP[0] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -1.253 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[5] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -1.277 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[9] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -1.347 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[1] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -1.368 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[11] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -1.455 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_rom/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DIPADIP[0] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -1.456 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[10] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -1.468 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[0] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -1.506 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[4] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -1.515 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[13] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -1.552 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[6] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -1.659 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_rom/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DIPADIP[0] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -1.700 ns between u_upg/inst/upg_inst/upg_done_o_reg/C (clocked by clk_out2_cpuclk) and u_mem/u_ram_32x16384/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[12] (clocked by clk_out1_cpuclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch u_decode/write_register_reg[0] cannot be properly analyzed as its control pin u_decode/write_register_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch u_decode/write_register_reg[1] cannot be properly analyzed as its control pin u_decode/write_register_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch u_decode/write_register_reg[2] cannot be properly analyzed as its control pin u_decode/write_register_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch u_decode/write_register_reg[3] cannot be properly analyzed as its control pin u_decode/write_register_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch u_decode/write_register_reg[4] cannot be properly analyzed as its control pin u_decode/write_register_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[0]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[0]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[10]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[10]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[11]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[11]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[12]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[12]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[13]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[13]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[14]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[14]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[15]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[15]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[16]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[16]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[17]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[17]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[18]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[18]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[19]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[19]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[1]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[1]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[20]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[20]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[21]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[21]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[22]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[22]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[23]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[23]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[24]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[24]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[25]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[25]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[26]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[26]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[27]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[27]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[28]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[28]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[29]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[29]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[2]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[2]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[3]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[3]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[4]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[4]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[5]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[5]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[6]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[6]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[7]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[7]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[8]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[8]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch u_ifetch/link_addr_reg[9]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[9]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
 

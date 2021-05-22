@@ -16,11 +16,12 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOr
 INFO: [VRFC 10-311] analyzing module control32
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cpu_top
-INFO: [VRFC 10-2458] undeclared symbol let_ctrl, assumed default net type wire [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v:98]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/dmemory32.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module dmemory32
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module executs32
+INFO: [VRFC 10-2458] undeclared symbol ai, assumed default net type wire [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v:116]
+INFO: [VRFC 10-2458] undeclared symbol bi, assumed default net type wire [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v:117]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/idecode32.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module idecode32
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/ifetc32.v" into library xil_defaultlib

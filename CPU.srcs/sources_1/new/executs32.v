@@ -38,7 +38,7 @@ module executs32(
     input alu_src, // 1 means the 2nd operand is an immedite (except beq£¬bne£©
     input i_format, // 1 means I-Type instruction except beq, bne, LW, SW
     input sftmd, // 1 means this is a shift instruction
-    input jr // 1 means this is 
+    input jr // 1 means this is
 );
 
     wire signed [31:0] a_input,b_input; // two operands for calculation
@@ -111,4 +111,8 @@ module executs32(
     assign zero = (alu_output_mux[31:0] == 0);
 	assign branch_addr = pc_plus_4[31:2] + $signed(imme_extend);
     assign addr_result = branch_addr[31:0];
+    
+    // debug
+    assign ai = a_input;
+    assign bi = b_input;
 endmodule

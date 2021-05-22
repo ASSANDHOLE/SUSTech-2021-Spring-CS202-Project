@@ -37,7 +37,7 @@ module mem_or_io(
     output switch_ctrl // Switch
 );
     assign addr_out = addr_in;
-    assign r_wdata = m_read ? m_rdata : {16'b0, io_rdata};
+    assign r_wdata = io_read ? {16'h0000, io_rdata} : m_rdata;
     assign led_ctrl = io_write;
     assign switch_ctrl = io_read;
     
