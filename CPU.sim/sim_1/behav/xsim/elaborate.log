@@ -1,0 +1,45 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto eda6f01da05847209fa27c03a0592ec1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_cpu_behav xil_defaultlib.tb_cpu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'm_rdata' [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v:195]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'r_wdata' [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v:198]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'read_data' [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v:210]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'ram_dat_o' [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v:228]
+WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 15 for port 'upg_adr_o' [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v:260]
+WARNING: [VRFC 10-5021] port 'upg_rst_i' is not connected on this instance [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v:120]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.leds
+Compiling module xil_defaultlib.switchs
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=46,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.cpuclk_clk_wiz
+Compiling module xil_defaultlib.cpuclk
+Compiling module xil_defaultlib.ifetc32
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.prgrom
+Compiling module xil_defaultlib.program_rom
+Compiling module xil_defaultlib.control32
+Compiling module xil_defaultlib.executs32
+Compiling module xil_defaultlib.mem_or_io
+Compiling module xil_defaultlib.idecode32
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.dmemory32
+Compiling module xil_defaultlib.uart_bmpg
+Compiling module xil_defaultlib.upg
+Compiling module xil_defaultlib.uart_bmpg_0
+Compiling module xil_defaultlib.cpu_top
+Compiling module xil_defaultlib.tb_cpu
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_cpu_behav

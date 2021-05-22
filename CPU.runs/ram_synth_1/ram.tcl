@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/ram_synth_1/ram.tcl"
+  variable script "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/ram_synth_1/ram.tcl"
   variable category "vivado_synth"
 }
 
@@ -79,17 +79,19 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.cache/wt [current_project]
-set_property parent.project_path D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.xpr [current_project]
-set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+set_property webtalk.parent_dir D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.cache/wt [current_project]
+set_property parent.project_path D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.cache/ip [current_project]
+set_property ip_repo_paths d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/SEU_CSE_507_user_uart_bmpg_1.3 [current_project]
+update_ip_catalog
+set_property ip_output_repo d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.srcs/sources_1/ip/ram/ram.xci
-set_property used_in_implementation false [get_files -all d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_ooc.xdc]
+read_ip -quiet D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/ip/ram/ram.xci
+set_property used_in_implementation false [get_files -all d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -105,7 +107,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cached_ip [config_ip_cache -export -no_bom  -dir D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/ram_synth_1 -new_name ram -ip [get_ips ram]]
+set cached_ip [config_ip_cache -export -no_bom  -dir D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/ram_synth_1 -new_name ram -ip [get_ips ram]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cached_ip eq {} } {
@@ -160,32 +162,32 @@ create_report "ram_synth_1_synth_report_utilization_0" "report_utilization -file
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/ram_synth_1/ram.dcp d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram.dcp
+  file copy -force D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/ram_synth_1/ram.dcp d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_stub.v
+  write_verilog -force -mode synth_stub d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_stub.vhdl
+  write_vhdl -force -mode synth_stub d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_sim_netlist.v
+  write_verilog -force -mode funcsim d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -195,47 +197,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/ram_synth_1/ram.dcp d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram.dcp
+  file copy -force D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/ram_synth_1/ram.dcp d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/ram_synth_1/ram_stub.v d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_stub.v
+  file rename -force D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/ram_synth_1/ram_stub.v d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/ram_synth_1/ram_stub.vhdl d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_stub.vhdl
+  file rename -force D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/ram_synth_1/ram_stub.vhdl d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/ram_synth_1/ram_sim_netlist.v d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_sim_netlist.v
+  file rename -force D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/ram_synth_1/ram_sim_netlist.v d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/ram_synth_1/ram_sim_netlist.vhdl d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_sim_netlist.vhdl
+  file rename -force D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/ram_synth_1/ram_sim_netlist.vhdl d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.ip_user_files/ip/ram]} {
+if {[file isdir D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.ip_user_files/ip/ram]} {
   catch { 
-    file copy -force d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_stub.v D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.ip_user_files/ip/ram
+    file copy -force d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_stub.v D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.ip_user_files/ip/ram
   }
 }
 
-if {[file isdir D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.ip_user_files/ip/ram]} {
+if {[file isdir D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.ip_user_files/ip/ram]} {
   catch { 
-    file copy -force d:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.gen/sources_1/ip/ram/ram_stub.vhdl D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.ip_user_files/ip/ram
+    file copy -force d:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/ram_stub.vhdl D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.ip_user_files/ip/ram
   }
 }
 file delete __synthesis_is_running__

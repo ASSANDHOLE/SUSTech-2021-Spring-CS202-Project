@@ -1,4 +1,5 @@
 -makelib ies_lib/xpm -sv \
+  "D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
   "D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib ies_lib/xpm \

@@ -1,0 +1,37 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/uart_bmpg_0/uart_bmpg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_bmpg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/uart_bmpg_0/upg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module upg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/uart_bmpg_0/sim/uart_bmpg_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_bmpg_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/ram/sim/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/prgrom/sim/prgrom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module prgrom
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/cpuclk/cpuclk_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpuclk_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.gen/sources_1/ip/cpuclk/cpuclk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpuclk
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/control32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control32
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_top
+INFO: [VRFC 10-2458] undeclared symbol let_ctrl, assumed default net type wire [D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/cpu_top.v:98]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/dmemory32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dmemory32
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module executs32
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/idecode32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module idecode32
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/ifetc32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ifetc32
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/leds.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module leds
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/mem_or_io.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_or_io
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/program_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module program_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/switches.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module switchs
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sim_1/new/tb_cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_cpu

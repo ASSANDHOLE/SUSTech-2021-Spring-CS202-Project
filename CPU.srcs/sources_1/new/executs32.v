@@ -101,7 +101,7 @@ module executs32(
             alu_result[31:0] = {b_input[15:0], {16{1'b0}}};
         end
         else if (sftmd) begin
-            alu_result = shift_result ;
+            alu_result = shift_result;
         end
         else begin
             alu_result = alu_output_mux[31:0];

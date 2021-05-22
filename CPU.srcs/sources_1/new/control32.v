@@ -62,12 +62,11 @@ module control32(
                     && r_format;
     assign branch = opcode == 6'b000100;
     assign n_branch = opcode == 6'b000101;
-    assign mem_write = opcode == 6'b101011;
     assign mem_or_io_to_reg = io_read || mem_read;
     assign alu_src = i_format || lw || mem_write;
     assign reg_write = (r_format || lw || jal || i_format) && !(jr);
-    assign mem_write = (sw && (alu_result_high[21:0] != 22'b11_1111_1111_1111_1111_1111));
-    assign mem_read = lw;
-    assign io_read = 0; // TODO add details  # cin $1
-    assign io_write = 0; // TODO add details  # cout
+    assign mem_write = sw && (alu_result_high[21:0] != 22'b11_1111_1111_1111_1111_1111);
+    assign mem_read = lw && (alu_result_high[21:0] != 22'b11_1111_1111_1111_1111_1111);
+    assign io_read = lw && (alu_result_high[21:0] == 22'b11_1111_1111_1111_1111_1111);
+    assign io_write = sw && (alu_result_high[21:0] == 22'b11_1111_1111_1111_1111_1111);
 endmodule

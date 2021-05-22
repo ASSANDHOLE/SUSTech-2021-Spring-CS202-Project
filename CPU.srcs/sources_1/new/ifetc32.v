@@ -21,9 +21,10 @@
 
 
 module ifetc32(
-    output [31:0] instruction,
     output [31:0] branch_base_addr,
     output reg [31:0] link_addr,
+    output [31:0] pco,
+    input [31:0] instruction_i,
     input clock, reset,
     input [31:0] addr_result,
     input zero,
@@ -61,7 +62,7 @@ module ifetc32(
         end
         else begin
             if (jmp || jal) begin
-                pc <= {4'b0000, instruction[25:0], 2'b00};
+                pc <= {4'b0000, instruction_i[25:0], 2'b00};
             end
             else begin
                 pc <= next_pc;
@@ -77,15 +78,5 @@ module ifetc32(
     
     assign branch_base_addr = pc + 4;
     
-    program_rom u_rom(
-        .rom_clk_i(clock),
-        .instruction_o(instruction),
-        .rom_adr_i(pc[15:2]),
-        .upg_rst_i(upg_rst_i),
-        .upg_clk_i(upg_clk_i),
-        .upg_wen_i(upg_wen_i),
-        .upg_adr_i(upg_adr_i),
-        .upg_dat_i(upg_dat_i),
-        .upg_done_i(upg_done_i)
-    );
+    assign pco = pc;
 endmodule

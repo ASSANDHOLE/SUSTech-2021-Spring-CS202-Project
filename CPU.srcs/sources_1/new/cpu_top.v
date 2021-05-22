@@ -26,14 +26,13 @@ module cpu_top(
     input rx,
     output tx,
     input [23:0] switch_in,
-    output [23:0] led_out
-);
+    output [23:0] led_out,
     
-    ////////////////////////////////////////////////////////////////////////
-    //// current issues: 
-    ////    control32: line 71-72
-    ////    cpu_top: something that i'm not sure about (look for comments)
-    ////////////////////////////////////////////////////////////////////////
+    output [3:0] m_rw_io_rw, // debug
+    output [31:0] instruction_o,
+    output [31:0] alu_res,
+    output [31:0] rd1, imt
+);
     
     wire reset;
 
@@ -81,10 +80,16 @@ module cpu_top(
     wire [31:0] imme_extend;
     wire [31:0] instruction;
     wire [31:0] link_addr;
+    wire [31:0] pco;
     wire [31:0] read_data_1;
     wire [31:0] read_data_2;
     wire [31:0] write_data_mio;
     
+    assign m_rw_io_rw = {mem_read, mem_write, io_read, io_write}; // debug
+    assign instruction_o = instruction;
+    assign alu_res = alu_result;
+    assign rd1 = read_data_1;
+    assign imt = imme_extend;
     
     leds u_leds(
         .led_clk(cpu_clk),
@@ -113,9 +118,10 @@ module cpu_top(
     );
     
     ifetc32 u_ifetch(
-        .instruction(instruction),
+        .instruction_i(instruction),
         .branch_base_addr(branch_base_addr),
         .link_addr(link_addr),
+        .pco(pco),
         .clock(cpu_clk),
         .reset(reset),
         .addr_result(addr_result),
@@ -125,8 +131,13 @@ module cpu_top(
         .n_branch(n_branch),
         .jmp(jmp),
         .jal(jal),
-        .jr(jr),
-
+        .jr(jr)
+    );
+    
+    program_rom u_rom(
+        .rom_clk_i(cpu_clk),
+        .instruction_o(instruction),
+        .rom_adr_i(pco[15:2]),
         .upg_rst_i(upg_rst),
         .upg_clk_i(upg_clk_o),
         .upg_wen_i(upg_wen_o),
@@ -204,13 +215,13 @@ module cpu_top(
         .reg_dst(reg_dst),
         .clock(cpu_clk),
         .reset(reset),
-        .opcplus4(branche_base_addr)
+        .opcplus4(link_addr)
     );
     
     
     
     dmemory32 u_mem(
-        .ram_clk(cpu_clk),
+        .ram_clk_i(cpu_clk),
         .ram_wen_i(mem_write),
         .ram_adr_i(addr_out_mio[13:0]),
         .ram_dat_i(write_data_mio),
@@ -225,7 +236,7 @@ module cpu_top(
     );
     
     wire spg_bufg;
-    BUFG asd(
+    BUFG u_bufg(
         .I(start_pg),
         .O(spg_bufg)
     );    

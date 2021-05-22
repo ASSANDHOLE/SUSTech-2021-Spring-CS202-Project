@@ -1,0 +1,31 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_cpu.u_cpu.u_rom.instmem.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_cpu.u_cpu.u_mem.u_ram_32x16384.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance tb_cpu.u_cpu.u_clk.inst.plle2_adv_inst are not same.
+$finish called at time : 2420 ns : File "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sim_1/new/tb_cpu.v" Line 62
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_cpu.u_cpu.u_rom.instmem.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_cpu.u_cpu.u_mem.u_ram_32x16384.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Stopped at time : 0 fs : File "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v" Line 69
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance tb_cpu.u_cpu.u_clk.inst.plle2_adv_inst are not same.
+Stopped at time : 2035190 ps : File "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v" Line 69
+Stopped at time : 2043885 ps : File "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v" Line 69
+Stopped at time : 2043885 ps : File "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v" Line 69
+Stopped at time : 2052580 ps : File "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v" Line 69
+Stopped at time : 2061275 ps : File "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sources_1/new/executs32.v" Line 69
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_cpu.u_cpu.u_rom.instmem.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_cpu.u_cpu.u_mem.u_ram_32x16384.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance tb_cpu.u_cpu.u_clk.inst.plle2_adv_inst are not same.
+$finish called at time : 2420 ns : File "D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.srcs/sim_1/new/tb_cpu.v" Line 62

@@ -1,0 +1,26 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../CPU.gen/sources_1/ip/cpuclk" \
+"../../../../CPU.gen/sources_1/ip/uart_bmpg_0/uart_bmpg.v" \
+"../../../../CPU.gen/sources_1/ip/uart_bmpg_0/upg.v" \
+"../../../../CPU.gen/sources_1/ip/uart_bmpg_0/sim/uart_bmpg_0.v" \
+"../../../../CPU.gen/sources_1/ip/ram/sim/ram.v" \
+"../../../../CPU.gen/sources_1/ip/prgrom/sim/prgrom.v" \
+"../../../../CPU.gen/sources_1/ip/cpuclk/cpuclk_clk_wiz.v" \
+"../../../../CPU.gen/sources_1/ip/cpuclk/cpuclk.v" \
+"../../../../CPU.srcs/sources_1/new/control32.v" \
+"../../../../CPU.srcs/sources_1/new/cpu_top.v" \
+"../../../../CPU.srcs/sources_1/new/dmemory32.v" \
+"../../../../CPU.srcs/sources_1/new/executs32.v" \
+"../../../../CPU.srcs/sources_1/new/idecode32.v" \
+"../../../../CPU.srcs/sources_1/new/ifetc32.v" \
+"../../../../CPU.srcs/sources_1/new/leds.v" \
+"../../../../CPU.srcs/sources_1/new/mem_or_io.v" \
+"../../../../CPU.srcs/sources_1/new/program_rom.v" \
+"../../../../CPU.srcs/sources_1/new/switches.v" \
+"../../../../CPU.srcs/sim_1/new/tb_cpu.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
