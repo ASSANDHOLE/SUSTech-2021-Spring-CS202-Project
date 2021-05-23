@@ -36,7 +36,7 @@ module cpu_top(
     reg upg_rst;
     // wire upg_rst_i; // UPG reset (Active High)
     wire upg_wen_o; // UPG write enable
-    wire [13:0] upg_adr_o; // UPG write address
+    wire [14:0] upg_adr_o; // UPG write address
     wire [31:0] upg_dat_o; // UPG write data
     wire upg_done_o; // 1 if program finished
     wire upg_clk_o;
@@ -55,7 +55,6 @@ module cpu_top(
     wire mem_read;
     wire mem_write;
     wire n_branch;
-    wire ram_dat_o;
     wire reg_dst;
     wire reg_write;
     wire sftmd;
@@ -75,10 +74,12 @@ module cpu_top(
     wire [31:0] instruction;
     wire [31:0] link_addr;
     wire [31:0] pco;
+    wire [31:0] ram_dat_o;
     wire [31:0] read_data_1;
     wire [31:0] read_data_2;
     wire [31:0] r_wdata;
     wire [31:0] write_data_mio;
+    
     
     leds u_leds(
         .led_clk(cpu_clk),
@@ -129,8 +130,8 @@ module cpu_top(
         .rom_adr_i(pco[15:2]),
         .upg_rst_i(upg_rst),
         .upg_clk_i(upg_clk_o),
-        .upg_wen_i(upg_wen_o),
-        .upg_adr_i(upg_adr_o),
+        .upg_wen_i(upg_wen_o & (!upg_adr_o[14])),
+        .upg_adr_i(upg_adr_o[13:0]),
         .upg_dat_i(upg_dat_o),
         .upg_done_i(upg_done_o)
     );
@@ -183,7 +184,7 @@ module cpu_top(
         .addr_in(alu_result),
         .m_rdata(ram_dat_o),
         .io_rdata(io_rdata),
-        .r_rdata(read_data_2), // not sure about this
+        .r_rdata(read_data_2),
         .r_wdata(r_wdata),
         .addr_out(addr_out_mio),
         .write_data(write_data_mio),
@@ -216,8 +217,8 @@ module cpu_top(
 
         .upg_rst_i(upg_rst),
         .upg_clk_i(upg_clk_o),
-        .upg_wen_i(upg_wen_o),
-        .upg_adr_i(upg_adr_o),
+        .upg_wen_i(upg_wen_o & upg_adr_o[14]),
+        .upg_adr_i(upg_adr_o[13:0]),
         .upg_dat_i(upg_dat_o),
         .upg_done_i(upg_done_o)
     );
