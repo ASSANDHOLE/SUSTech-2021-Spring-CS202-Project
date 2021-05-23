@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun May 23 08:37:20 2021
-# Process ID: 10716
+# Start of session at: Sun May 23 10:32:14 2021
+# Process ID: 21348
 # Current directory: D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/synth_1
 # Command line: vivado.exe -log cpu_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_top.tcl
 # Log file: D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/synth_1/cpu_top.vds

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sun May 23 08:38:28 2021
+| Date         : Sun May 23 10:33:20 2021
 | Host         : AN-GUANGYAN running 64-bit major release  (build 9200)
 | Command      : report_utilization -file cpu_top_utilization_synth.rpt -pb cpu_top_utilization_synth.pb
 | Design       : cpu_top
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1897 |     0 |     63400 |  2.99 |
-|   LUT as Logic          | 1897 |     0 |     63400 |  2.99 |
+| Slice LUTs*             | 1846 |     0 |     63400 |  2.91 |
+|   LUT as Logic          | 1846 |     0 |     63400 |  2.91 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         | 1191 |     0 |    126800 |  0.94 |
 |   Register as Flip Flop | 1156 |     0 |    126800 |  0.91 |
@@ -149,13 +149,13 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 1235 |                 LUT |
+| LUT6     | 1228 |                 LUT |
 | FDRE     | 1056 |        Flop & Latch |
 | MUXF7    |  288 |               MuxFx |
-| LUT4     |  248 |                 LUT |
-| LUT3     |  232 |                 LUT |
-| LUT5     |  227 |                 LUT |
-| LUT2     |  103 |                 LUT |
+| LUT4     |  251 |                 LUT |
+| LUT5     |  232 |                 LUT |
+| LUT3     |  230 |                 LUT |
+| LUT2     |  102 |                 LUT |
 | FDCE     |   70 |        Flop & Latch |
 | LDCE     |   35 |        Flop & Latch |
 | CARRY4   |   32 |          CarryLogic |
@@ -163,7 +163,7 @@ Table of Contents
 | IBUF     |   28 |                  IO |
 | OBUF     |   25 |                  IO |
 | BUFG     |    3 |               Clock |
-| LUT1     |    2 |                 LUT |
+| LUT1     |    1 |                 LUT |
 +----------+------+---------------------+
 
 

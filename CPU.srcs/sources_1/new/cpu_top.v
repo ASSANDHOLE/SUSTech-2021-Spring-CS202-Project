@@ -232,7 +232,7 @@ module cpu_top(
         if (spg_bufg) begin
             upg_rst = 0;
         end
-        else begin
+        if (fpga_reset) begin
             upg_rst = 1;
         end
     end    

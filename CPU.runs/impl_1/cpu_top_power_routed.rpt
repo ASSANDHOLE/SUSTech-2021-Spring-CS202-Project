@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Sun May 23 08:50:05 2021
+| Date             : Sun May 23 10:57:39 2021
 | Host             : AN-GUANGYAN running 64-bit major release  (build 9200)
 | Command          : report_power -file cpu_top_power_routed.rpt -pb cpu_top_power_summary_routed.pb -rpx cpu_top_power_routed.rpx
 | Design           : cpu_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.213        |
+| Total On-Chip Power (W)  | 0.217        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.115        |
+| Dynamic (W)              | 0.119        |
 | Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 2.7          |
 | Max Ambient (C)          | 84.4         |
@@ -53,20 +53,20 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.002 |        6 |       --- |             --- |
-| Slice Logic             |     0.003 |     4499 |       --- |             --- |
-|   LUT as Logic          |     0.003 |     2133 |     63400 |            3.36 |
+| Slice Logic             |     0.004 |     4496 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     2119 |     63400 |            3.34 |
 |   CARRY4                |    <0.001 |       52 |     15850 |            0.33 |
 |   F7/F8 Muxes           |    <0.001 |      288 |     63400 |            0.45 |
 |   Register              |    <0.001 |     1556 |    126800 |            1.23 |
 |   BUFG                  |    <0.001 |        4 |        32 |           12.50 |
 |   LUT as Shift Register |    <0.001 |       10 |     19000 |            0.05 |
 |   Others                |     0.000 |      128 |       --- |             --- |
-| Signals                 |     0.005 |     3831 |       --- |             --- |
+| Signals                 |     0.008 |     3831 |       --- |             --- |
 | Block RAM               |     0.004 |       29 |       135 |           21.48 |
 | PLL                     |     0.100 |        1 |         6 |           16.67 |
 | I/O                     |    <0.001 |       53 |       285 |           18.60 |
 | Static Power            |     0.099 |          |           |                 |
-| Total                   |     0.213 |          |           |                 |
+| Total                   |     0.217 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.038 |       0.022 |      0.016 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.041 |       0.026 |      0.016 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.070 |       0.051 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,16 +148,16 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| cpu_top            |     0.115 |
+| cpu_top            |     0.119 |
 |   u_clk            |     0.101 |
 |     inst           |     0.101 |
-|   u_decode         |     0.002 |
+|   u_decode         |     0.004 |
 |   u_mem            |     0.003 |
 |     u_ram_32x16384 |     0.003 |
 |       U0           |     0.003 |
-|   u_rom            |     0.008 |
-|     instmem        |     0.003 |
-|       U0           |     0.003 |
+|   u_rom            |     0.010 |
+|     instmem        |     0.004 |
+|       U0           |     0.004 |
 +--------------------+-----------+
 
 
