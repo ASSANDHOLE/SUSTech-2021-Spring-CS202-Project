@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1621737132">
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1621780452">
   <File Type="PA-TCL" Name="cpu_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="cpu_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="cpu_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="cpu_top.vds"/>
   <File Type="RDS-UTIL" Name="cpu_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="cpu_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="cpu_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="cpu_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="cpu_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/control32.v">
@@ -57,6 +60,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/num_to_seg_led.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/program_rom.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -65,6 +75,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/switches.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/val_to_seg_led.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

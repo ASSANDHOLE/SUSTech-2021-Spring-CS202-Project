@@ -37,7 +37,7 @@ module idecode32(
 );
 
     reg [31:0] registers [0:31];
-    reg [4:0]  write_register;
+    reg [4:0]  write_register = 5'b11111;
     reg [31:0] write_data;
 
     wire [4:0] read_register_1;

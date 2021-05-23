@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Study/ComputerScience/ComputerOrganization/vivado/cpu_components/CPU/CPU.runs/cpuclk_synth_1'
+HD_PWD='D:/Study/ComputerScience/ComputerOrganization/vivado/cs202_project/CPU.runs/cpuclk_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

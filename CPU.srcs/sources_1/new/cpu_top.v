@@ -26,20 +26,34 @@ module cpu_top(
     input rx,
     output tx,
     input [23:0] switch_in,
-    output [23:0] led_out
+    output [23:0] led_out,    
+    output [7:0] seg_en,
+    output [7:0] seg_out
 );
     
     wire reset;
-
-    // (@ Guo Yubin) Change the name as lab slides
     wire upg_clk;
-    reg upg_rst;
-    // wire upg_rst_i; // UPG reset (Active High)
+    reg upg_rst; // wire upg_rst_i; // UPG reset (Active High)
     wire upg_wen_o; // UPG write enable
     wire [14:0] upg_adr_o; // UPG write address
     wire [31:0] upg_dat_o; // UPG write data
     wire upg_done_o; // 1 if program finished
     wire upg_clk_o;
+    wire spg_bufg;
+    BUFG u_bufg(
+        .I(start_pg),
+        .O(spg_bufg)
+    );    
+    
+    always @(posedge clock) begin
+        if (spg_bufg) begin
+            upg_rst = 0;
+        end
+        if (fpga_reset) begin
+            upg_rst = 1;
+        end
+    end    
+    assign reset = fpga_reset | !upg_rst;
     
     wire alu_src;
     wire branch;
@@ -81,12 +95,34 @@ module cpu_top(
     wire [31:0] write_data_mio;
     
     
+    reg [1:0] led_addr;
+    reg [1:0] switch_addr;
+    reg  seg_addr;
+    always@(*) begin 
+        if(addr_out_mio == 32'hFFFFFC70)
+            switch_addr = 2'b00;
+        else if (addr_out_mio == 32'hFFFFFC72)
+            switch_addr = 2'b10;
+        else if(addr_out_mio == 32'hFFFFFC60)
+            led_addr = 2'b00;
+        else if (addr_out_mio == 32'hFFFFFC62)
+            led_addr = 2'b10;
+        else if(addr_out_mio == 32'hFFFFFC80)
+            seg_addr = 1'b1;
+        else begin
+            seg_addr = 1'b0;
+            led_addr = 2'b11;
+            switch_addr = 2'b11;
+        end  
+    end
+    
+    
     leds u_leds(
         .led_clk(cpu_clk),
         .led_rst(reset),
         .led_write(io_write),
         .led_cs(led_ctrl),
-        .led_addr(addr_out_mio[1:0]),
+        .led_addr(led_addr),
         .led_wdata(write_data_mio[15:0]),
         .led_out(led_out)
     );
@@ -95,10 +131,20 @@ module cpu_top(
         .switch_clk(cpu_clk),
         .switch_rst(reset),
         .switch_cs(switch_ctrl),
-        .switch_addr(addr_out_mio[1:0]),
+        .switch_addr(switch_addr),
         .switch_read(io_read),
         .switch_i(switch_in),
         .switch_rdata(io_rdata)
+    );
+    
+    val_to_seg_led u_seg_led(
+        .fpga_clk(clock),
+        .reset(reset),
+        .val(write_data_mio),
+        .seg_cs(led_ctrl),
+        .seg_addr(seg_addr),
+        .seg_en(seg_en),
+        .seg_out(seg_out)
     );
     
     cpuclk u_clk(
@@ -223,20 +269,7 @@ module cpu_top(
         .upg_done_i(upg_done_o)
     );
     
-    wire spg_bufg;
-    BUFG u_bufg(
-        .I(start_pg),
-        .O(spg_bufg)
-    );    
-    always @(posedge clock) begin
-        if (spg_bufg) begin
-            upg_rst = 0;
-        end
-        if (fpga_reset) begin
-            upg_rst = 1;
-        end
-    end    
-    assign reset = fpga_reset | !upg_rst;
+    
     
     uart_bmpg_0 u_upg(
         .upg_clk_i(upg_clk),
@@ -250,6 +283,7 @@ module cpu_top(
         .upg_done_o(upg_done_o),
         .upg_tx_o(tx)
     );
-
     
+   
+ 
 endmodule
