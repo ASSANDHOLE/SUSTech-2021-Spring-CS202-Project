@@ -71,6 +71,7 @@ module cpu_top(
     wire n_branch;
     wire reg_dst;
     wire reg_write;
+    wire seg_ctrl;
     wire sftmd;
     wire switch_ctrl;
     
@@ -93,36 +94,13 @@ module cpu_top(
     wire [31:0] read_data_2;
     wire [31:0] r_wdata;
     wire [31:0] write_data_mio;
-    
-    
-    reg [1:0] led_addr;
-    reg [1:0] switch_addr;
-    reg  seg_addr;
-    always@(*) begin 
-        if(addr_out_mio == 32'hFFFFFC70)
-            switch_addr = 2'b00;
-        else if (addr_out_mio == 32'hFFFFFC72)
-            switch_addr = 2'b10;
-        else if(addr_out_mio == 32'hFFFFFC60)
-            led_addr = 2'b00;
-        else if (addr_out_mio == 32'hFFFFFC62)
-            led_addr = 2'b10;
-        else if(addr_out_mio == 32'hFFFFFC80)
-            seg_addr = 1'b1;
-        else begin
-            seg_addr = 1'b0;
-            led_addr = 2'b11;
-            switch_addr = 2'b11;
-        end  
-    end
-    
-    
+
     leds u_leds(
         .led_clk(cpu_clk),
         .led_rst(reset),
         .led_write(io_write),
         .led_cs(led_ctrl),
-        .led_addr(led_addr),
+        .led_addr(addr_out_mio[1:0]),
         .led_wdata(write_data_mio[15:0]),
         .led_out(led_out)
     );
@@ -131,7 +109,7 @@ module cpu_top(
         .switch_clk(cpu_clk),
         .switch_rst(reset),
         .switch_cs(switch_ctrl),
-        .switch_addr(switch_addr),
+        .switch_addr(addr_out_mio[1:0]),
         .switch_read(io_read),
         .switch_i(switch_in),
         .switch_rdata(io_rdata)
@@ -141,8 +119,7 @@ module cpu_top(
         .fpga_clk(clock),
         .reset(reset),
         .val(write_data_mio),
-        .seg_cs(led_ctrl),
-        .seg_addr(seg_addr),
+        .seg_cs(seg_ctrl),
         .seg_en(seg_en),
         .seg_out(seg_out)
     );
@@ -235,6 +212,7 @@ module cpu_top(
         .addr_out(addr_out_mio),
         .write_data(write_data_mio),
         .led_ctrl(led_ctrl),
+        .seg_ctrl(seg_ctrl),
         .switch_ctrl(switch_ctrl)
     );
     

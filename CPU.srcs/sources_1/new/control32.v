@@ -41,7 +41,7 @@ module control32(
     output mem_read,
     output io_read,
     output io_write
-    );
+);
     wire r_format;
     wire lw;
     wire sw;

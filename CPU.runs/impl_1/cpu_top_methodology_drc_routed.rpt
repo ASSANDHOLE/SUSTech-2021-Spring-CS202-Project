@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sun May 23 22:36:48 2021
+| Date         : Mon May 24 09:30:34 2021
 | Host         : AN-GUANGYAN running 64-bit major release  (build 9200)
 | Command      : report_methodology -file cpu_top_methodology_drc_routed.rpt -pb cpu_top_methodology_drc_routed.pb -rpx cpu_top_methodology_drc_routed.rpx
 | Design       : cpu_top
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 1207
+             Violations found: 1151
 +-----------+------------------+------------------------------+------------+
 | Rule      | Severity         | Description                  | Violations |
 +-----------+------------------+------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell  | 1000       |
-| LUTAR-1   | Warning          | LUT drives async reset alert | 64         |
-| TIMING-20 | Warning          | Non-clocked latch            | 143        |
+| LUTAR-1   | Warning          | LUT drives async reset alert | 61         |
+| TIMING-20 | Warning          | Non-clocked latch            | 90         |
 +-----------+------------------+------------------------------+------------+
 
 2. REPORT DETAILS
@@ -5036,14 +5036,14 @@ Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell u_decode/cnt[26]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_leds/led_out_reg[0]/CLR, u_leds/led_out_reg[10]/CLR,
+LUT cell u_decode/seg_en_reg[7]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_leds/led_out_reg[0]/CLR, u_leds/led_out_reg[10]/CLR,
 u_leds/led_out_reg[11]/CLR, u_leds/led_out_reg[12]/CLR,
 u_leds/led_out_reg[13]/CLR, u_leds/led_out_reg[14]/CLR,
 u_leds/led_out_reg[15]/CLR, u_leds/led_out_reg[16]/CLR,
 u_leds/led_out_reg[17]/CLR, u_leds/led_out_reg[18]/CLR,
 u_leds/led_out_reg[19]/CLR, u_leds/led_out_reg[1]/CLR,
 u_leds/led_out_reg[20]/CLR, u_leds/led_out_reg[21]/CLR,
-u_leds/led_out_reg[22]/CLR (the first 15 of 119 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+u_leds/led_out_reg[22]/CLR (the first 15 of 127 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
@@ -5346,732 +5346,452 @@ LUT drives async reset alert
 LUT cell u_rom/link_addr_reg[9]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ifetch/link_addr_reg[9]_C/CLR, u_ifetch/link_addr_reg[9]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-LUTAR-1#62 Warning
-LUT drives async reset alert  
-LUT cell u_rom/switch_addr_reg[0]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) switch_addr_reg[0]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#63 Warning
-LUT drives async reset alert  
-LUT cell u_rom/switch_addr_reg[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) switch_addr_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#64 Warning
-LUT drives async reset alert  
-LUT cell u_rom/switch_addr_reg[1]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) switch_addr_reg[1]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
 TIMING-20#1 Warning
-Non-clocked latch  
-The latch led_addr_reg[0] cannot be properly analyzed as its control pin led_addr_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#2 Warning
-Non-clocked latch  
-The latch led_addr_reg[1] cannot be properly analyzed as its control pin led_addr_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#3 Warning
-Non-clocked latch  
-The latch seg_addr_reg cannot be properly analyzed as its control pin seg_addr_reg/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#4 Warning
-Non-clocked latch  
-The latch switch_addr_reg[0] cannot be properly analyzed as its control pin switch_addr_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#5 Warning
-Non-clocked latch  
-The latch switch_addr_reg[1]/L7 (in switch_addr_reg[1] macro) cannot be properly analyzed as its control pin switch_addr_reg[1]/L7/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#6 Warning
 Non-clocked latch  
 The latch u_decode/write_register_reg[0] cannot be properly analyzed as its control pin u_decode/write_register_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#7 Warning
+TIMING-20#2 Warning
 Non-clocked latch  
 The latch u_decode/write_register_reg[1] cannot be properly analyzed as its control pin u_decode/write_register_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#8 Warning
+TIMING-20#3 Warning
 Non-clocked latch  
 The latch u_decode/write_register_reg[2] cannot be properly analyzed as its control pin u_decode/write_register_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#9 Warning
+TIMING-20#4 Warning
 Non-clocked latch  
 The latch u_decode/write_register_reg[3] cannot be properly analyzed as its control pin u_decode/write_register_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#10 Warning
+TIMING-20#5 Warning
 Non-clocked latch  
 The latch u_decode/write_register_reg[4] cannot be properly analyzed as its control pin u_decode/write_register_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#11 Warning
+TIMING-20#6 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[0]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[0]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#12 Warning
+TIMING-20#7 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[10]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[10]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#13 Warning
+TIMING-20#8 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[11]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[11]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#14 Warning
+TIMING-20#9 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[12]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[12]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#15 Warning
+TIMING-20#10 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[13]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[13]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#16 Warning
+TIMING-20#11 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[14]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[14]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#17 Warning
+TIMING-20#12 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[15]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[15]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#18 Warning
+TIMING-20#13 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[16]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[16]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#19 Warning
+TIMING-20#14 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[17]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[17]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#20 Warning
+TIMING-20#15 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[18]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[18]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#21 Warning
+TIMING-20#16 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[19]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[19]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#22 Warning
+TIMING-20#17 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[1]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[1]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#23 Warning
+TIMING-20#18 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[20]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[20]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#24 Warning
+TIMING-20#19 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[21]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[21]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#25 Warning
+TIMING-20#20 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[22]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[22]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#26 Warning
+TIMING-20#21 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[23]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[23]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#27 Warning
+TIMING-20#22 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[24]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[24]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#28 Warning
+TIMING-20#23 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[25]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[25]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#29 Warning
+TIMING-20#24 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[26]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[26]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#30 Warning
+TIMING-20#25 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[27]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[27]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#31 Warning
+TIMING-20#26 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[28]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[28]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#32 Warning
+TIMING-20#27 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[29]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[29]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#33 Warning
+TIMING-20#28 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[2]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[2]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#34 Warning
+TIMING-20#29 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[3]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[3]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#35 Warning
+TIMING-20#30 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[4]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[4]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#36 Warning
+TIMING-20#31 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[5]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[5]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#37 Warning
+TIMING-20#32 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[6]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[6]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#38 Warning
+TIMING-20#33 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[7]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[7]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#39 Warning
+TIMING-20#34 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[8]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[8]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#40 Warning
+TIMING-20#35 Warning
 Non-clocked latch  
 The latch u_ifetch/link_addr_reg[9]_LDC cannot be properly analyzed as its control pin u_ifetch/link_addr_reg[9]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#41 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[0] cannot be properly analyzed as its control pin u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#42 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[1] cannot be properly analyzed as its control pin u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#43 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[2] cannot be properly analyzed as its control pin u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#44 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[3] cannot be properly analyzed as its control pin u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#45 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[4] cannot be properly analyzed as its control pin u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#46 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[5] cannot be properly analyzed as its control pin u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#47 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[6] cannot be properly analyzed as its control pin u_seg_led/gfor[0].num_to_seg_inst/seg_led_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#48 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[0] cannot be properly analyzed as its control pin u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#49 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[1] cannot be properly analyzed as its control pin u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#50 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[2] cannot be properly analyzed as its control pin u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#51 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[3] cannot be properly analyzed as its control pin u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#52 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[4] cannot be properly analyzed as its control pin u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#53 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[5] cannot be properly analyzed as its control pin u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#54 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[6] cannot be properly analyzed as its control pin u_seg_led/gfor[1].num_to_seg_inst/seg_led_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#55 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[0] cannot be properly analyzed as its control pin u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#56 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[1] cannot be properly analyzed as its control pin u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#57 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[2] cannot be properly analyzed as its control pin u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#58 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[3] cannot be properly analyzed as its control pin u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#59 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[4] cannot be properly analyzed as its control pin u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#60 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[5] cannot be properly analyzed as its control pin u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#61 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[6] cannot be properly analyzed as its control pin u_seg_led/gfor[2].num_to_seg_inst/seg_led_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#62 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[0] cannot be properly analyzed as its control pin u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#63 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[1] cannot be properly analyzed as its control pin u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#64 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[2] cannot be properly analyzed as its control pin u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#65 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[3] cannot be properly analyzed as its control pin u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#66 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[4] cannot be properly analyzed as its control pin u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#67 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[5] cannot be properly analyzed as its control pin u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#68 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[6] cannot be properly analyzed as its control pin u_seg_led/gfor[3].num_to_seg_inst/seg_led_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#69 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[0] cannot be properly analyzed as its control pin u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#70 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[1] cannot be properly analyzed as its control pin u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#71 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[2] cannot be properly analyzed as its control pin u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#72 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[3] cannot be properly analyzed as its control pin u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#73 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[4] cannot be properly analyzed as its control pin u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#74 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[5] cannot be properly analyzed as its control pin u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#75 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[6] cannot be properly analyzed as its control pin u_seg_led/gfor[4].num_to_seg_inst/seg_led_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#76 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[0] cannot be properly analyzed as its control pin u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#77 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[1] cannot be properly analyzed as its control pin u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#78 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[2] cannot be properly analyzed as its control pin u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#79 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[3] cannot be properly analyzed as its control pin u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#80 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[4] cannot be properly analyzed as its control pin u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#81 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[5] cannot be properly analyzed as its control pin u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#82 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[6] cannot be properly analyzed as its control pin u_seg_led/gfor[5].num_to_seg_inst/seg_led_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#83 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[0] cannot be properly analyzed as its control pin u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#84 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[1] cannot be properly analyzed as its control pin u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#85 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[2] cannot be properly analyzed as its control pin u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#86 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[3] cannot be properly analyzed as its control pin u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#87 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[4] cannot be properly analyzed as its control pin u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#88 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[5] cannot be properly analyzed as its control pin u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#89 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[6] cannot be properly analyzed as its control pin u_seg_led/gfor[6].num_to_seg_inst/seg_led_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#90 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[0] cannot be properly analyzed as its control pin u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#91 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[1] cannot be properly analyzed as its control pin u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#92 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[2] cannot be properly analyzed as its control pin u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#93 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[3] cannot be properly analyzed as its control pin u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#94 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[4] cannot be properly analyzed as its control pin u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#95 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[5] cannot be properly analyzed as its control pin u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#96 Warning
-Non-clocked latch  
-The latch u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[6] cannot be properly analyzed as its control pin u_seg_led/gfor[7].num_to_seg_inst/seg_led_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#97 Warning
+TIMING-20#36 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[0][0] cannot be properly analyzed as its control pin u_seg_led/nums_reg[0][0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#98 Warning
+TIMING-20#37 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[0][1] cannot be properly analyzed as its control pin u_seg_led/nums_reg[0][1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#99 Warning
+TIMING-20#38 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[0][2] cannot be properly analyzed as its control pin u_seg_led/nums_reg[0][2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#100 Warning
+TIMING-20#39 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[0][3] cannot be properly analyzed as its control pin u_seg_led/nums_reg[0][3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#101 Warning
+TIMING-20#40 Warning
+Non-clocked latch  
+The latch u_seg_led/nums_reg[0][4] cannot be properly analyzed as its control pin u_seg_led/nums_reg[0][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#41 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[1][0] cannot be properly analyzed as its control pin u_seg_led/nums_reg[1][0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#102 Warning
+TIMING-20#42 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[1][1] cannot be properly analyzed as its control pin u_seg_led/nums_reg[1][1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#103 Warning
+TIMING-20#43 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[1][2] cannot be properly analyzed as its control pin u_seg_led/nums_reg[1][2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#104 Warning
+TIMING-20#44 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[1][3] cannot be properly analyzed as its control pin u_seg_led/nums_reg[1][3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#105 Warning
+TIMING-20#45 Warning
+Non-clocked latch  
+The latch u_seg_led/nums_reg[1][4] cannot be properly analyzed as its control pin u_seg_led/nums_reg[1][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#46 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[2][0] cannot be properly analyzed as its control pin u_seg_led/nums_reg[2][0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#106 Warning
+TIMING-20#47 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[2][1] cannot be properly analyzed as its control pin u_seg_led/nums_reg[2][1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#107 Warning
+TIMING-20#48 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[2][2] cannot be properly analyzed as its control pin u_seg_led/nums_reg[2][2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#108 Warning
+TIMING-20#49 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[2][3] cannot be properly analyzed as its control pin u_seg_led/nums_reg[2][3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#109 Warning
+TIMING-20#50 Warning
+Non-clocked latch  
+The latch u_seg_led/nums_reg[2][4] cannot be properly analyzed as its control pin u_seg_led/nums_reg[2][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#51 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[3][0] cannot be properly analyzed as its control pin u_seg_led/nums_reg[3][0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#110 Warning
+TIMING-20#52 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[3][1] cannot be properly analyzed as its control pin u_seg_led/nums_reg[3][1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#111 Warning
+TIMING-20#53 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[3][2] cannot be properly analyzed as its control pin u_seg_led/nums_reg[3][2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#112 Warning
+TIMING-20#54 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[3][3] cannot be properly analyzed as its control pin u_seg_led/nums_reg[3][3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#113 Warning
+TIMING-20#55 Warning
+Non-clocked latch  
+The latch u_seg_led/nums_reg[3][4] cannot be properly analyzed as its control pin u_seg_led/nums_reg[3][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#56 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[4][0] cannot be properly analyzed as its control pin u_seg_led/nums_reg[4][0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#114 Warning
+TIMING-20#57 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[4][1] cannot be properly analyzed as its control pin u_seg_led/nums_reg[4][1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#115 Warning
+TIMING-20#58 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[4][2] cannot be properly analyzed as its control pin u_seg_led/nums_reg[4][2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#116 Warning
+TIMING-20#59 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[4][3] cannot be properly analyzed as its control pin u_seg_led/nums_reg[4][3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#117 Warning
+TIMING-20#60 Warning
+Non-clocked latch  
+The latch u_seg_led/nums_reg[4][4] cannot be properly analyzed as its control pin u_seg_led/nums_reg[4][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#61 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[5][0] cannot be properly analyzed as its control pin u_seg_led/nums_reg[5][0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#118 Warning
+TIMING-20#62 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[5][1] cannot be properly analyzed as its control pin u_seg_led/nums_reg[5][1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#119 Warning
+TIMING-20#63 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[5][2] cannot be properly analyzed as its control pin u_seg_led/nums_reg[5][2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#120 Warning
+TIMING-20#64 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[5][3] cannot be properly analyzed as its control pin u_seg_led/nums_reg[5][3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#121 Warning
+TIMING-20#65 Warning
+Non-clocked latch  
+The latch u_seg_led/nums_reg[5][4] cannot be properly analyzed as its control pin u_seg_led/nums_reg[5][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#66 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[6][0] cannot be properly analyzed as its control pin u_seg_led/nums_reg[6][0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#122 Warning
+TIMING-20#67 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[6][1] cannot be properly analyzed as its control pin u_seg_led/nums_reg[6][1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#123 Warning
+TIMING-20#68 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[6][2] cannot be properly analyzed as its control pin u_seg_led/nums_reg[6][2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#124 Warning
+TIMING-20#69 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[6][3] cannot be properly analyzed as its control pin u_seg_led/nums_reg[6][3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#125 Warning
+TIMING-20#70 Warning
+Non-clocked latch  
+The latch u_seg_led/nums_reg[6][4] cannot be properly analyzed as its control pin u_seg_led/nums_reg[6][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#71 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[7][0] cannot be properly analyzed as its control pin u_seg_led/nums_reg[7][0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#126 Warning
+TIMING-20#72 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[7][1] cannot be properly analyzed as its control pin u_seg_led/nums_reg[7][1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#127 Warning
+TIMING-20#73 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[7][2] cannot be properly analyzed as its control pin u_seg_led/nums_reg[7][2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#128 Warning
+TIMING-20#74 Warning
 Non-clocked latch  
 The latch u_seg_led/nums_reg[7][3] cannot be properly analyzed as its control pin u_seg_led/nums_reg[7][3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#129 Warning
+TIMING-20#75 Warning
+Non-clocked latch  
+The latch u_seg_led/nums_reg[7][4] cannot be properly analyzed as its control pin u_seg_led/nums_reg[7][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#76 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_en_reg[0] cannot be properly analyzed as its control pin u_seg_led/seg_en_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#130 Warning
+TIMING-20#77 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_en_reg[1] cannot be properly analyzed as its control pin u_seg_led/seg_en_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#131 Warning
+TIMING-20#78 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_en_reg[2] cannot be properly analyzed as its control pin u_seg_led/seg_en_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#132 Warning
+TIMING-20#79 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_en_reg[3] cannot be properly analyzed as its control pin u_seg_led/seg_en_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#133 Warning
+TIMING-20#80 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_en_reg[4] cannot be properly analyzed as its control pin u_seg_led/seg_en_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#134 Warning
+TIMING-20#81 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_en_reg[5] cannot be properly analyzed as its control pin u_seg_led/seg_en_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#135 Warning
+TIMING-20#82 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_en_reg[6] cannot be properly analyzed as its control pin u_seg_led/seg_en_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#136 Warning
+TIMING-20#83 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_en_reg[7] cannot be properly analyzed as its control pin u_seg_led/seg_en_reg[7]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#137 Warning
+TIMING-20#84 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_out_reg[0] cannot be properly analyzed as its control pin u_seg_led/seg_out_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#138 Warning
+TIMING-20#85 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_out_reg[1] cannot be properly analyzed as its control pin u_seg_led/seg_out_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#139 Warning
+TIMING-20#86 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_out_reg[2] cannot be properly analyzed as its control pin u_seg_led/seg_out_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#140 Warning
+TIMING-20#87 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_out_reg[3] cannot be properly analyzed as its control pin u_seg_led/seg_out_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#141 Warning
+TIMING-20#88 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_out_reg[4] cannot be properly analyzed as its control pin u_seg_led/seg_out_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#142 Warning
+TIMING-20#89 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_out_reg[5] cannot be properly analyzed as its control pin u_seg_led/seg_out_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#143 Warning
+TIMING-20#90 Warning
 Non-clocked latch  
 The latch u_seg_led/seg_out_reg[6] cannot be properly analyzed as its control pin u_seg_led/seg_out_reg[6]/G is not reached by a timing clock
 Related violations: <none>

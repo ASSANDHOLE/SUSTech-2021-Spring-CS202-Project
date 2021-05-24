@@ -34,11 +34,14 @@ module mem_or_io(
     output [31:0] addr_out, // address to memory
     output reg [31:0] write_data, // data to memory or I/O£¨m_wdata, io_wdata£©
     output led_ctrl, // LED Chip Select
+    output seg_ctrl, // seg_led cs
     output switch_ctrl // Switch
 );
+    wire led_or_seg = addr_in == 32'hFFFFFC80; // 1 -> seg : 0 -> led
     assign addr_out = addr_in;
     assign r_wdata = io_read ? {16'h0000, io_rdata} : m_rdata;
-    assign led_ctrl = io_write;
+    assign led_ctrl = io_write && !led_or_seg;
+    assign seg_ctrl = io_write && led_or_seg;
     assign switch_ctrl = io_read;
     
     always @* begin
